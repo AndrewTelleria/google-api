@@ -18,11 +18,15 @@ function initialize(lat, long, heading, pitch, zoom) {
 
 
 
-  // var transitLayer = new google.maps.TransitLayer();
-  // transitLayer.setMap(map);
+  function transit() {
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+  }
 
-  var bikeLayer = new google.maps.BicyclingLayer();
-  bikeLayer.setMap(map);
+  function bike() {
+    var bikeLayer = new google.maps.BicyclingLayer();
+    bikeLayer.setMap(map);
+  }
 
   var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -78,11 +82,13 @@ $(document).ready(function() {
   initialize(45.520786, -122.677733, 114, 13, 1);
   $('#voodoo').submit(function(event) {
   initialize(45.522636, -122.673347, 100, 0);
+  // transit();
   event.preventDefault();
   });
 
   $('#providence').submit(function(event) {
   initialize(45.522021, -122.690165, 270, 0, 2);
+  // bike();
   event.preventDefault();
   });
 
