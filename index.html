@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+<link rel="stylesheet" href="build/css/vendor.css">
     <link rel="stylesheet" href="css/simpleMap.css">
     <!-- WE NEED to change this back and implement SASS -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoI0922IX_uQ45RDxxJAGZ_hKHkk_63TI"></script>
@@ -11,20 +11,52 @@
     <title>Simple Map</title>
   </head>
   <body>
-    <div>
-      <form id = "voodoo">
-        <button type="submit" name="button">Voodoo Donuts</button>
-      </form>
-      <form id = "providence">
-        <button type="submit" name="button">Providence Park</button>
-      </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <form id = "voodoo">
+          <button type="submit" class="btn btn-danger" name="button">Voodoo Donuts</button>
+        </form>
+          </div>
+        <div class="col-md-2">
+          <form id = "providence">
+           <button type="submit" class="btn btn-success" name="button">Providence Park</button>
+          </form>
+        </div>
+
+        <div class="col-md-2">
+          <form id = "10barrel">
+           <button type="submit" class="btn btn-caution" name="button">10 Barrel Brewing</button>
+          </form>
+        </div>
+
+        <div class="col-md-2">
+          <form id = "hopWorks">
+           <button type="submit" class="btn btn-success" name="button">Hop Works</button>
+          </form>
+        </div>
+
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+      </div>
     </div>
 
-    <br>
-    <hr>
+    
 
-    <div id="map"></div>
-    <div id="pano"></div>
+      </div>
+      <br>
+      <hr>
+
+      <div id="map"></div>
+      <div id="pano"></div>
+
 
 
   </body>

@@ -35,6 +35,15 @@ $(document).ready(function() {
   $('#providence').submit(function(event) {
   initialize(45.522021, -122.690165);
   event.preventDefault();
+  });
 
+  $('#10barrel').submit(function(event) {
+  initialize(45.525777, -122.685391);
+  event.preventDefault();
+  });
+
+  $('#hopWorks').submit(function(event) {
+  initialize(45.496937, -122.634874);
+  event.preventDefault();
   });
 });
