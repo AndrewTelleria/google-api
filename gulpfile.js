@@ -22,9 +22,9 @@ var lib = require('bower-files')({
 });
 
 gulp.task('concatInterface', function() {
-  return gulp.src(['./js/*-interface.js'])
+  return gulp.src(['./js/map.js','./js/*-interface.js'])
     .pipe(concat('allConcat.js'))
-    .pipe(gulp.dest('./tmp'));
+      .pipe(gulp.dest('./tmp'));
 });
 
 gulp.task('jsBrowserify', ['concatInterface'] , function() {
