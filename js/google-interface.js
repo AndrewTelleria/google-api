@@ -1,7 +1,6 @@
 var map;
 var portland;
 var path;
-var typeOfTravel;
 var request;
 // var lat;
 // var long;
@@ -27,7 +26,8 @@ function initialize(lat, long, heading, pitch, zoom) {
   request = {
   destination: destination,
   origin: epicodus,
-  travelMode: google.maps.TravelMode.DRIVING
+  travelMode: google.maps.TravelMode.TRANSIT
+
 };
 
 var directionsService = new google.maps.DirectionsService();
