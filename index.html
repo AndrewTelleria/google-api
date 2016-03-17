@@ -11,114 +11,60 @@
     <title>Simple Map</title>
   </head>
   <body>
+    <div id="floating-panel" class = "container">
+    <b>Mode of Travel: </b>
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-2">
           <form id = "voodoo">
-            <button type="submit" class="btn btn-danger" name="button">Voodoo Donuts</button>
-          </form>
-            <div id = "voodooOptions">
-              <form id = "transitVoodoo">
-               <button type="submit" class="btn btn-success" name="button">Transit</button>
-              </form>
-              <form id = "walkVoodoo">
-               <button type="submit" class="btn btn-success" name="button">Walk</button>
-              </form>
-              <form id = "driveVoodoo">
-               <button type="submit" class="btn btn-success" name="button">Drive</button>
-              </form>
-            </div>
-        </div>
-
+          <button type="submit" class="btn btn-danger" name="button">Voodoo Donuts</button>
+        </form>
+          </div>
         <div class="col-md-2">
           <form id = "providence">
            <button type="submit" class="btn btn-danger" name="button">Providence Park</button>
           </form>
-          <div class="col-md-2" id = "providenceOptions">
-            <form id = "transitProvidence">
-             <button type="submit" class="btn btn-success" name="button">Transit</button>
-            </form>
-            <form id = "walkProvidence">
-             <button type="submit" class="btn btn-success" name="button">Walk</button>
-            </form>
-            <form id = "driveProvidence">
-             <button type="submit" class="btn btn-success" name="button">Drive</button>
-            </form>
-          </div>
         </div>
 
         <div class="col-md-2">
           <form id = "10barrel">
            <button type="submit" class="btn btn-danger" name="button">10 Barrel Brewing</button>
           </form>
-          <div class="col-md-2" id = "barrelOptions">
-            <form id = "transitBarrel">
-             <button type="submit" class="btn btn-success" name="button">Transit</button>
-            </form>
-            <form id = "walkBarrel">
-             <button type="submit" class="btn btn-success" name="button">Walk</button>
-            </form>
-            <form id = "driveBarrel">
-             <button type="submit" class="btn btn-success" name="button">Drive</button>
-            </form>
-          </div>
         </div>
 
         <div class="col-md-2">
           <form id = "hopWorks">
            <button type="submit" class="btn btn-danger" name="button">Hop Works</button>
           </form>
-          <div class="col-md-2" id = "hopOptions">
-            <form id = "transitHop">
-             <button type="submit" class="btn btn-success" name="button">Transit</button>
-            </form>
-            <form id = "walkHop">
-             <button type="submit" class="btn btn-success" name="button">Walk</button>
-            </form>
-            <form id = "driveHop">
-             <button type="submit" class="btn btn-success" name="button">Drive</button>
-            </form>
-          </div>
         </div>
 
         <div class="col-md-2">
           <form id = "modaCenter">
            <button type="submit" class="btn btn-danger" name="button">Moda Center</button>
           </form>
-          <div class="col-md-2" id = "modaOptions">
-            <form id = "transitModa">
-             <button type="submit" class="btn btn-success" name="button">Transit</button>
-            </form>
-            <form id = "walkModa">
-             <button type="submit" class="btn btn-success" name="button">Walk</button>
-            </form>
-            <form id = "driveModa">
-             <button type="submit" class="btn btn-success" name="button">Drive</button>
-            </form>
-          </div>
         </div>
 
         <div class="col-md-2">
           <form id = "epicodus">
            <button type="submit" class="btn btn-danger" name="button">Epicodus</button>
           </form>
-          <div class="col-md-2" id = "epiOptions">
-            <form id = "transitEpi">
-             <button type="submit" class="btn btn-success" name="button">Transit</button>
-            </form>
-            <form id = "walkEpi">
-             <button type="submit" class="btn btn-success" name="button">Walk</button>
-            </form>
-            <form id = "driveEpi">
-             <button type="submit" class="btn btn-success" name="button">Drive</button>
-            </form>
-          </div>
         </div>
       </div>
     </div>
-<br>
-<hr>
-    <div id="map"></div>
-    <div id="pano"></div>
+      <br>
+      <hr>
+
+      <div id="map"></div>
+      <div id="pano"></div>
+
+
+
   </body>
 </html>
