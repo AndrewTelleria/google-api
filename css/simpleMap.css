@@ -3,8 +3,33 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 #map, #pano {
   height: 100%;
   float: left;
   width: 45%;
+}
+
+#epiOptions {
+  display: none;
+}
+
+#modaOptions  {
+  display: none;
+}
+
+#hopOptions  {
+  display: none;
+}
+
+#barrelOptions  {
+  display: none;
+}
+
+#providenceOptions  {
+  display: none;
+}
+
+#voodooOptions  {
+  display: none;
 }

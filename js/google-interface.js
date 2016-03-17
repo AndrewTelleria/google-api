@@ -1,6 +1,8 @@
 var map;
 var portland;
 var path;
+var typeOfTravel;
+var request;
 // var lat;
 // var long;
 function initialize(lat, long, heading, pitch, zoom) {
@@ -10,23 +12,33 @@ function initialize(lat, long, heading, pitch, zoom) {
   pitch = pitch;
   zoom = zoom;
   portland = {lat: lat, lng: long};
+  var destination = {lat: lat, lng: long};
+  var epicodus = {lat: 45.520786, lng: -122.677733};
 
   var map = new google.maps.Map(document.getElementById('map'), {
     center: portland,
     zoom: 14
   });
 
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+    map: map
+  });
+
+  request = {
+  destination: destination,
+  origin: epicodus,
+  travelMode: google.maps.TravelMode.DRIVING
+};
+
+var directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      // Display the route on the map.
+      directionsDisplay.setDirections(response);
+    }
+  });
 
 
-  function transit() {
-    var transitLayer = new google.maps.TransitLayer();
-    transitLayer.setMap(map);
-  }
-
-  function bike() {
-    var bikeLayer = new google.maps.BicyclingLayer();
-    bikeLayer.setMap(map);
-  }
 
   var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -73,48 +85,158 @@ function animateCircle(line) {
 
 
 
-
-
-
-
-
 $(document).ready(function() {
   initialize(45.520786, -122.677733, 114, 13, 1);
-  $('#voodoo').submit(function(event) {
-  initialize(45.522636, -122.673347, 100, 0);
-  // transit();
+//vodoo
+$('#voodoo').submit(function(event) {
+  initialize(45.522636, -122.673347, 100, 0, 0);
+  $('#voodooOptions').toggle();
   event.preventDefault();
-  });
+});
 
-  $('#providence').submit(function(event) {
+$('#transitVoodoo').submit(function(event) {
+  event.preventDefault();
+  initialize(45.522636, -122.673347, 100, 0, 0);
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
+
+$('#walkVoodoo').submit(function(event) {
+  event.preventDefault();
+  initialize(45.522636, -122.673347, 100, 0, 0);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
+
+$('#driveVoodoo').submit(function(event) {
+  event.preventDefault();
+  initialize(45.522636, -122.673347, 100, 0, 0);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
+
+
+//providence
+$('#providence').submit(function(event) {
+initialize(45.522021, -122.690165, 270, 0, 2);
+$('#providenceOptions').toggle();
+event.preventDefault();
+});
+
+$('#transitProvidence').submit(function(event) {
+  event.preventDefault();
   initialize(45.522021, -122.690165, 270, 0, 2);
-  // bike();
-  event.preventDefault();
-  });
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
 
-  $('#10barrel').submit(function(event) {
+$('#walkProvidence').submit(function(event) {
+  event.preventDefault();
+  initialize(45.522021, -122.690165, 270, 0, 2);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
+
+$('#driveProvidence').submit(function(event) {
+  event.preventDefault();
+  initialize(45.522021, -122.690165, 270, 0, 2);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
+
+//10 barel
+$('#10barrel').submit(function(event) {
+initialize(45.525777, -122.685391, 330, 0, 1.5);
+$('#barrelOptions').toggle();
+event.preventDefault();
+});
+
+$('#transitBarrel').submit(function(event) {
+  event.preventDefault();
   initialize(45.525777, -122.685391, 330, 0, 1.5);
-  event.preventDefault();
-  });
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
 
-  $('#hopWorks').submit(function(event) {
+$('#walkBarrel').submit(function(event) {
+  event.preventDefault();
+  initialize(45.525777, -122.685391, 330, 0, 1.5);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
+
+$('#driveBarrel').submit(function(event) {
+  event.preventDefault();
+  initialize(45.525777, -122.685391, 330, 0, 1.5);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
+
+//hop works
+$('#hopWorks').submit(function(event) {
+initialize(45.497276, -122.635482, 130, 0, 3.5);
+$('#hopOptions').toggle();
+event.preventDefault();
+});
+
+$('#transitHop').submit(function(event) {
+  event.preventDefault();
   initialize(45.497276, -122.635482, 130, 0, 3.5);
-  event.preventDefault();
-  });
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
 
-  $('#modaCenter').submit(function(event) {
+$('#walkHop').submit(function(event) {
+  event.preventDefault();
+  initialize(45.497276, -122.635482, 130, 0, 3.5);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
+
+$('#driveHop').submit(function(event) {
+  event.preventDefault();
+  initialize(45.497276, -122.635482, 130, 0, 3.5);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
+
+//mode center
+$('#modaCenter').submit(function(event) {
+  console.log("moda");
+initialize(45.530541, -122.666653, 10, 20, 2);
+$('#modaOptions').toggle();
+event.preventDefault();
+});
+
+$('#transitModa').submit(function(event) {
+  event.preventDefault();
   initialize(45.530541, -122.666653, 10, 20, 2);
-  event.preventDefault();
-  });
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
 
-  $('#epicodus').submit(function(event) {
-    initialize(45.520786, -122.677733, 114, 13, 1);
+$('#walkModa').submit(function(event) {
   event.preventDefault();
-  });
+  initialize(45.530541, -122.666653, 10, 20, 2);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
 
-  $('#falls').submit(function(event) {
-    initialize(45.57462, -122.12762, 280, 9, 1);
+$('#driveModa').submit(function(event) {
   event.preventDefault();
-  });
+  initialize(45.530541, -122.666653, 10, 20, 2);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
+
+//epicodus
+$('#epicodus').submit(function(event) {
+  initialize(45.520786, -122.677733, 114, 13, 1);
+  $('#epiOptions').toggle();
+event.preventDefault();
+});
+
+$('#transitEpi').submit(function(event) {
+  event.preventDefault();
+  initialize(45.520786, -122.677733, 114, 13, 1);
+  request.travelMode = google.maps.TravelMode.TRANSIT
+});
+
+$('#walkEpi').submit(function(event) {
+  event.preventDefault();
+  initialize(45.520786, -122.677733, 114, 13, 1);
+  request.travelMode = google.maps.TravelMode.WALKING
+});
+
+$('#driveEpi').submit(function(event) {
+  event.preventDefault();
+  initialize(45.520786, -122.677733, 114, 13, 1);
+  request.travelMode = google.maps.TravelMode.DRIVING
+});
 
 });
